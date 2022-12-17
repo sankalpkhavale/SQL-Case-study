@@ -1,0 +1,74 @@
+CASE_STUDY:
+table 5 : films,film_crew,reviews,awards,film_company....
+View 1 : film_view
+
+create table Films (Film_id int,Title varchar(20),release_year year,country varchar(20),duration int,language varchar(20),budget int,Gross int,primary key(film_id));
+
+insert into films values(1,'URI',2019,'IND',120,'Hindi',42,352);insert into films values(2,'Dune',2021,'USA',150,'English',61,380);insert into films values(3,'King-maker',2020,'KOR',123,'Korean',49,351);insert into films values(4,'Pokemon',2019,'JPN',90,'Japanese',15,310);insert into films values(5,'Parasite',2019,'KOR',132,'korean',38,540),(6,'Aqyaman',2017,'Aus',152,'English',40,390),(7,'One Piece',2016,'JPN',100,'Japanese',19,322);insert into films values(8,'Airlift',2016,'IND',125,'Hindi',29,320),(9,'The Revenant',2015,'USA',165,'English',31,520),(10,'The Avengers',2015,'USA',141,'English',40,1050);insert into films values(11,'Dangal',2011,'IND',161,'Hindi',29,980),(12,'MIB',2012,'ITA',115,'Italian',34,367);
+
+insert  into films values(13,'Chernobyl',2013,'RUS',178,'Russian',38,402),(14,'Shang-Chi',2020,'CHN',162,'Chinese',78,980),(15,'Viking',2016,'RUS',113,'Russian',36,399);insert into films values(16,'Veronica',2017,'ESP',174,'Spanish',42,320),(17,'DB Super',2020,'JPN',75,'Japanese',21,460),(18,'the artist',2012,'AUS',160,'English',36,612);insert into films values(19,'Birdman',2014,'USA',180,'English',32,720),(20,'Baahubali-1',2015,'IND',168,'Hindi',32,580);
+
+insert into films values(21,'Naruto',2013,'JPN',92,'Japanese',21,360),(22,'Baahubali-2',2017,'IND',177,'Hindi',40,570);insert into films values(23,'The Platform',2019,'ESP',154,'Spanish',38,435),(24,'KGF',2018,'IND',155,'Hindi',43,758),(25,'The Spiderman',2022,'USA',180,'English',70,null);select * from films;
+
+
+
+
+
+create table Reviews (Film_id int,Certification varchar(20),Genre varchar(20),IMDB_score decimal,Rotten_tomatoes int,foreign key (film_id) references films(Film_id));
+
+insert into reviews values (1,'Not rated','Action',8.3,62);insert into reviews values (2,'PG-13','Adventure',8.1,83);insert into reviews values (3,'R','Drama',7.6,97),(4,'Not rated','Anime',6.5,null);insert into reviews values (5,'R','Drama',8.5,98),(6,'PG-13','Action',6.9,65);insert into reviews values (7,'Not rated','Anime',null,null),(8,'Not rated','Thriller',8,83);insert into reviews values (9,'R','Adventure',8,78),(10,'PG-13','Action',8.1,91);insert into reviews values (11,'Not rated','Sports',8.4,88),(12,'G','Sci-fi',7.3,92);insert into reviews values (13,'18+','Drama',5.1,null),(14,'PG-13','Action',7.4,91);insert into reviews values (15,'Not rated','War',4.6,Null),(16,'18+','Horror',6.2,88);insert into reviews values (17,'Not rated','Anime',Null,Null),(18,'G','Romance',7.9,95);insert into reviews values (19,'G','Romance',7.7,91),(20,'PG-13','Action',8.1,89);insert into reviews values (21,'Not rated','Anime',Null,Null),(22,'PG-13','Action',8.3,86);insert into reviews values (23,'18+','Horror',7,79),(24,'Not rated','Drama',8.4,71),(25,'PG-13','Action',8.4,93);select * from reviews;
+
+
+create table film_crew (Film_id int,Pid varchar(20),Production_comp varchar(40),Actor varchar(40),Actress varchar(40),Director varchar(40),Writer varchar(40),foreign key (Film_id) references films(Film_id));
+
+
+insert into film_crew values (1,'P101','RSVP Movies','Vicky Kaushal','Yami Gautam','Ronnie Screwvala','Aditya Dhar');insert into film_crew values (2,'P102','legendary pictures','Timotheinsert into film_crew values (3,'P103','Evergreen pictures','Park Si-hoo','Ko Sung-hee','Byun Sung-hyun','Sung-Hyun');e Chalamet','Zendaya','Denis Villeneuve','Jon Spaihts');insert into film_crew values (4,'P104','Funimation',null,null,'Tetsuo Yajima','Satoshi Tajiri');insert into film_crew values (5,'P105','CJ Entertainment','Choi Woo-shik','Cho Yeo Jeong','Bong Joon-ho','Han Jin-won');insert into film_crew values (6,'P106','Warner Bros. Pictures','Jason Momoa','Amber Heard','James wan','Will Beall');insert into film_crew values (7,'P104','Funimation',null,null,'Goro Taniguchi','Eiichiro Oda');insert into film_crew values (8,'P107','T-Series','Akshay Kumar','Nimrat Kaur','Raja Krishna Menon','Sonu Sinha');insert into film_crew values (9,'P108','20th fox','Leonardo DiCaprio',null,'Alejandro Gonzalez Inarritu','Mark L. Smith');insert into film_crew values (10,'P109','Marvel Studios',null,null,'Russo','Stan lee');insert into film_crew values (11,'P107','T-Series','Amir Khan',null,'Nitesh Tiwari',null);insert into film_crew values (12,'P110','Columbia Pictures','Chris Hemsworth','Tessa Thompson','F. Gary Gray','Art Marcum');insert into film_crew values (13,'P111','Non-Stop Production',null,null,'Johan Renck','Craig Mazin');insert into film_crew values (14,'P109','Marvel Studios','Simu Liu','Awkwafina','Destin Daniel Cretton','Stan lee');insert into film_crew values (15,'P111','Non-Stop Production','Danila Kozlovsky','Svetlana Khodchenkova','Andrei Kravchuk',null);insert into film_crew values (16,'P112','Apaches Entertainment',null,'Sandra Escacena','Paco Plaza',null);insert into film_crew values (17,'P104','Funimation',null,null,'Daisuke Nishio','Akira Toriyama');insert into film_crew values (18,'P106','Warner Bros. Pictures','Jean Dujardin','Berenice Bejo','Michel Hazanavicius',null);insert into film_crew values (19,'P102','legendary pictures','Michael Keaton','Emma Stone','Alejandro Gonzalez Inarritu','Alexander Dinelaris');insert into film_crew values (20,'P101','RSVP Movies','Prabhas','Anushka Shetty','S. S. Rajamouli','S. S. Rajamouli');insert into film_crew values (21,'P104','Funimation',null,null,null,'Masashi Kishimoto');insert into film_crew values (22,'P101','RSVP Movies','Prabhas','Anushka Shetty','S. S. Rajamouli','S. S. Rajamouli');insert into film_crew values (23,'P112','Apaches Entertainment','Ivan Massague','Alexandra Masangkay','Galder Gaztelu-Urrutia','David Desola');insert into film_crew values (24,'P107','T-Series','Yash','Srinidhi Shetty','Prashanth Neel','S. S. Rajamouli');insert into film_crew values (25,'P109','Marvel Studios','Tom holland','Zendaya','Sam Raimi','Stan lee');
+
+
+
+create table Awards (Film_id int,Nominees int,Awards int,Type varchar(40),Award_year year(4),foreign key (film_id) references films(Film_id));
+
+insert into Awards values (1,3,1,'Best Story Award',2019);insert into Awards values (2,4,2,'Best VFX Award,Best Adventure Film',2021);insert into Awards values (3,2,0,null,null);insert into Awards (Film_id) values (4);insert into Awards values (5,3,1,'Best Drama Film',2019);insert into Awards values (6,1,0,null,null);insert into Awards (Film_id) values (7);insert into Awards values (8,1,1,'Best Director',2016);insert into Awards values (9,3,1,'Best Actor',2015);insert into Awards values (10,5,0,null,null);insert into Awards values (11,3,1,'Best Sport Film',2011);insert into Awards values (12,6,1,'Best Animation Film',2012);insert into Awards values (13,2,0,null,null);insert into Awards values (14,4,1,'Best Action Film',2020);insert into Awards (Film_id) values (15);insert into Awards values (16,3,1,'Best Horror Film',2017);insert into Awards (Film_id) values (17);insert into Awards values (18,6,2,'Best Writer,Best Music',2017);insert into Awards values (19,4,2,'Best Actress,Best Romance Film',2014);insert into Awards values (20,4,3,'Best Music,Best Writer,Best Director',2015);insert into Awards values (21,2,1,'Best Anime Film',2013);insert into Awards values (22,4,0,null,null);insert into Awards values (23,3,0,null,null);insert into Awards values (24,6,2,'Best Music,Best Actor',2018);insert into Awards (Film_id) values (25);
+
+
+
+
+
+
+Sub-query 1st: film table mdun, kontya movie hit movie aht te shodun kad?(net_profit>500) which movies are hit having net profit more than 500 m$?
+
+ans = select title,release_year,(gross-budget) as net_profit from films where (gross-budget) in (select (Gross-budget) from films where (gross-budget) > 500) order by release_year;
+
+sub_query 2nd: which movies are favourite by peoples having Imdb_rating more than 8 and rotten tomammtoes >75?
+
+ans = select film_id,title from films where film_id in (select film_id from reviews where (imdb_score,rotten_tomatoes) in (select imdb_score,rotten_tomatoes from reviews where imdb_score>8 and rotten_tomatoes>=75));
+
+
+Inner view : which actors has won the Best actor award?
+select films.title,film_crew.actor from films inner join film_crew on films.film_id=film_crew.film_id where actor in (select actor from film_crew where film_id in (select film_id from awards where type like '%actor%'));
+
+Left JOin: Give the names of films which have won any awards order by award_year also give the details of their imdb and rotten score...
+select films.title,awards.type,awards.award_year,reviews.Imdb_score,reviews.Rotten_tomatoes from films left join awards on films.film_id=awards.film_id left join reviews on films.film_id=reviews.film_id order by award_year;
+
+view:
+create view film_view as select films.film_id,films.title,film_crew.actor as cast,film_crew.actress as female_cast from films,film_crew where films.film_id=film_crew.film_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
